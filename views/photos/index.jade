@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        block content
+            h1= title
+            - photos.forEach(function(photo) {
+            div.photo
+                h2= photo.name
+                a(href='/photo/'+ photo.id + '/download')
+                    img(src='/photos/'+photo.path)
+            - })
+
